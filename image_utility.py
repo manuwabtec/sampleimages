@@ -24,3 +24,17 @@ def get_image(index, *argv):
     return img
   
   return np.zeros((200, 200), dtype=int)
+  
+  
+def get_image_trkv():
+
+  data_dir  = '//content//sampleimages//TRKV_Image'
+   
+  images    = os.listdir(data_dir )
+
+  filename  = os.path.join(data_dir, images[0])
+  img_defect = cv2.imread(filename)
+  filename  = os.path.join(data_dir, images[1])
+  img_no_defect = cv2.imread(filename)
+  
+  return img_defect, img_no_defect  
